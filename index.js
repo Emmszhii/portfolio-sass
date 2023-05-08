@@ -21,4 +21,5 @@ var slider = tns({
   ],
   nav: false,
   autoplay: false,
+  mouseDrag: true,
 });

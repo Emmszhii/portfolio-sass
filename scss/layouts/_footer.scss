@@ -1,0 +1,43 @@
+.footer {
+  background-color: $clr-light;
+  @include mediaQuery($mobile) {
+    padding: 4rem 0;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+
+    p {
+      margin: 0;
+      text-align: right;
+    }
+    a {
+      text-align: center;
+    }
+    @include mediaQuery($mobile) {
+      grid-template-columns: 1fr;
+      p {
+        text-align: center;
+      }
+    }
+  }
+  &__socials {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      li {
+        a {
+          font-size: 3rem;
+        }
+        &:hover a i {
+          color: rgba($color: $clr-dark, $alpha: 0.8);
+        }
+      }
+    }
+    @include mediaQuery($mobile) {
+      margin: 0 auto;
+    }
+  }
+}
