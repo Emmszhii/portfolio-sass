@@ -1,0 +1,42 @@
+section {
+  padding: 2rem 0;
+  overflow: hidden;
+  .section {
+    &__title {
+      text-align: center;
+      font-size: 2.4rem;
+      line-height: 24px;
+      position: relative;
+      &::before {
+        content: "";
+        width: 100vw;
+        height: 3px;
+        position: absolute;
+        left: 60%;
+        top: 50%;
+        background-color: $clr-accent;
+      }
+      &::after {
+        content: "";
+        width: 100vw;
+        height: 3px;
+        position: absolute;
+        right: 60%;
+        top: 50%;
+        background-color: $clr-accent;
+      }
+      @include mediaQuery($mobile) {
+        &::before {
+          left: 70%;
+        }
+        &::after {
+          right: 70%;
+        }
+      }
+    }
+    &__span {
+      display: block;
+      text-align: center;
+    }
+  }
+}

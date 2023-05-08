@@ -1,0 +1,108 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: $clr-light;
+  z-index: 99;
+  box-shadow: 0 0 3px 0 $clr-dark;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__nav {
+    ul {
+      display: flex;
+      gap: 2rem;
+      li {
+        a {
+          position: relative;
+          padding: 2rem 0;
+          &::before,
+          &.highlight::before {
+            content: "";
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            background-color: $clr-accent;
+            width: 0;
+            height: 3px;
+            transition: 0.5s ease-in-out;
+          }
+          &:hover::before {
+            width: 100%;
+          }
+          &.highlight::before {
+            width: 100%;
+          }
+          &.highlight:hover::before {
+            width: 0;
+          }
+          &.highlight::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 2rem;
+            background-color: $clr-accent;
+            width: 0;
+            height: 3px;
+            transition: 0.5s ease-in-out;
+          }
+          &.highlight:hover::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+    @include mediaQuery($mobile) {
+      ul {
+        overflow: hidden;
+        display: block;
+        transition: 0.5s ease-in-out;
+        position: absolute;
+        top: 9.35rem;
+        right: -100rem;
+        background-color: $clr-light;
+        width: 40rem;
+        height: 100vh;
+        padding: 2rem 0;
+        li {
+          padding: 1rem 0;
+          a {
+            padding: 0;
+            margin-left: 2rem;
+            width: 100%;
+          }
+        }
+      }
+      &.active {
+        ul {
+          right: 0rem;
+        }
+      }
+    }
+  }
+  .toggle__menu {
+    cursor: pointer;
+    @include mediaQueryMin($mobile) {
+      display: none;
+    }
+    span {
+      display: block;
+      width: 4rem;
+      height: 5px;
+      border-radius: 2rem;
+      margin: 5px 0;
+      background-color: $clr-dark;
+      transition: 0.5s ease-in-out;
+    }
+    &.active span:nth-child(1) {
+      transform: translateY(1rem) rotate(50deg);
+    }
+    &.active span:nth-child(2) {
+      opacity: 0;
+    }
+    &.active span:nth-child(3) {
+      transform: translateY(-1rem) rotate(-50deg);
+    }
+  }
+}

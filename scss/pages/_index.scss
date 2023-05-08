@@ -1,0 +1,206 @@
+.banner {
+  padding-top: 10rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mediaQuery($mobile) {
+      flex-direction: column-reverse;
+    }
+    img {
+      width: 40rem;
+      @include mediaQuery($mobile) {
+        width: 34rem;
+      }
+    }
+  }
+  &__content {
+    text-align: center;
+    p {
+      margin: 0;
+    }
+    h1 {
+      font-size: 9rem;
+      line-height: 7rem;
+    }
+    h2 {
+      font-size: 3.3rem;
+    }
+    @include mediaQuery($mobile) {
+      p {
+        padding-top: 1rem;
+      }
+      h1 {
+        font-size: 7rem;
+        line-height: 5rem;
+      }
+      h2 {
+        font-size: 2.4rem;
+      }
+    }
+  }
+}
+
+.services {
+  margin: 4rem 0;
+  background-color: $clr-primary;
+  &__items {
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+    @include mediaQuery($mobile) {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    color: $clr-light;
+    text-align: center;
+    @include mediaQuery($mobile) {
+      padding: 4rem 0;
+    }
+    h2 {
+      font-size: 3.3rem;
+      line-height: 3.3rem;
+    }
+    p {
+      padding: 3rem 0;
+      text-align: justify;
+    }
+  }
+  .section {
+    &__title {
+      color: $clr-light;
+    }
+    &__span {
+      color: $clr-light;
+    }
+  }
+}
+
+.skills {
+  padding: 4rem 0;
+  &__cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 4rem 0;
+    @include mediaQuery($mobile) {
+      flex-direction: column;
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $clr-primary;
+    padding: 2rem;
+    border-radius: 5px;
+    h4 {
+      font-size: 2.5rem;
+      color: $clr-light;
+      padding: 1rem 0;
+    }
+  }
+  &__logos {
+    @include grid(2, 2rem);
+    padding: 2rem;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    span {
+      color: $clr-light;
+    }
+  }
+}
+
+.about-hm {
+  padding: 4rem 0;
+  background-color: $clr-primary;
+  .section {
+    &__span {
+      color: $clr-light;
+    }
+    &__title {
+      color: $clr-light;
+    }
+  }
+  &__wrapper {
+    p {
+      color: $clr-light;
+      padding: 4rem 0;
+      margin: 0 auto;
+      max-width: 70rem;
+      text-align: justify;
+    }
+  }
+  &__cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    @include mediaQuery($mobile) {
+      flex-direction: column;
+    }
+  }
+  &__card {
+    padding: 4rem 8rem;
+    border-radius: 5px;
+    background-color: $clr-light;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+      padding: 4rem 6rem;
+    }
+    p {
+      padding: 4rem;
+    }
+  }
+}
+
+.testimonials {
+  padding: 4rem 0;
+  &__slide {
+    img {
+      @include imgFit(50rem, 50rem);
+      border-radius: 50%;
+      border: 4px solid $clr-dark;
+      display: block;
+      margin: 0 auto;
+    }
+    .slide__text {
+      max-width: 50rem;
+      margin: 0 auto;
+      p {
+        text-align: justify;
+      }
+    }
+  }
+  .tns {
+    &-outer {
+      padding: 4rem 0 !important;
+      position: relative;
+    }
+    &-controls {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 60%;
+      height: 70rem;
+      left: 23rem;
+      z-index: 99;
+      button {
+        font-size: 4rem;
+      }
+    }
+  }
+}
