@@ -6,10 +6,37 @@
   cursor: pointer;
 }
 
+.bg--outline {
+  background-color: transparent;
+  border: 1px solid $clr-primary;
+}
+
+.btn.bg--accent {
+  background-color: $clr-accent;
+  border: 1px solid transparent;
+}
+
+.btn.bg--o-accent {
+  background-color: transparent;
+  border: 2px solid $clr-accent;
+}
+
 .btn.bg--light:hover {
   background-color: rgba($color: $clr-light, $alpha: 0.8);
 }
 
 .btn.bg--primary:hover {
+  background-color: rgba($color: $clr-primary, $alpha: 0.8);
+}
+
+.btn.bg--accent:hover {
+  background-color: rgba($color: $clr-accent, $alpha: 0.8);
+}
+
+.btn.bg--o-accent:hover {
+  background-color: rgba($color: $clr-accent, $alpha: 0.8);
+}
+
+.btn.bg--outline:hover {
   background-color: rgba($color: $clr-primary, $alpha: 0.8);
 }

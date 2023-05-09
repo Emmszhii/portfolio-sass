@@ -1,12 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emms Portfolio</title>
+    <link rel="stylesheet" href="./scss/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+    />
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <a href="./index.html">
+            <img src="./img/Logo.png" alt="" />
+          </a>
+          <div class="header__nav">
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a class="highlight" href="#">Projects</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="toggle__menu">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="aboutMe">
+      <div class="container">
+        <div class="aboutMe__wrapper">
+          <div class="aboutMe__text">
+            <h3 class="section__title">About Me</h3>
+            <p>
+              Seeking a challenging opportunity where I will be able to utilize
+              my strong organizational skills, educational background and
+              ability to work well with people, which will allow me to grow
+              personally and professionally.
+            </p>
+            <p>
+              Seeking a challenging opportunity where I will be able to utilize
+              my strong organizational skills, educational background and
+              ability to work well with people, which will allow me to grow
+              personally and professionally.
+            </p>
+            <div class="aboutMe__socials">
+              <ul>
+                <li>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-square-github"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-square-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-square-twitter"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <img src="./img/About Banner Img.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise">
+      <div class="container">
+        <div class="expertise__wrapper">
+          <span class="section__span">What am I good at?</span>
+          <h3 class="section__title">Expertise</h3>
+          <h4>My Projects</h4>
+          <div class="expertise__slider">
+            <div class="expertise__slide">
+              <img src="./img/foodorder.png" alt="" />
+              <div class="expertise__text">
+                <h5>Title</h5>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aperiam corporis, corrupti suscipit necessitatibus provident
+                  repellendus distinctio est quo dolore soluta?
+                </p>
+                <div class="expertise__cta">
+                  <a href="" class="btn bg--accent"
+                    ><i class="fab fa-github"></i><span>Github</span></a
+                  >
+                  <a href="" class="btn bg--o-accent"
+                    ><i class="fas fa-desktop"></i><span>Live Demo</span></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="expertise__slide">
+              <img src="./img/forkifyapplication.png" alt="" />
+              <div class="expertise__text">
+                <h5>Title</h5>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aperiam corporis, corrupti suscipit necessitatibus provident
+                  repellendus distinctio est quo dolore soluta?
+                </p>
+                <div class="expertise__cta">
+                  <a href="" class="btn bg--accent"
+                    ><i class="fab fa-github"></i><span>Github</span></a
+                  >
+                  <a href="" class="btn bg--o-accent"
+                    ><i class="fas fa-desktop"></i><span>Live Demo</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__socials">
+            <ul>
+              <li>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-square-github"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-square-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-square-twitter"></i></a>
+              </li>
+            </ul>
+          </div>
+          <a href="#"><img src="./img/Logo.png" alt="" /></a>
+          <p>&copy; Emms Portfolio Website. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="./index.js"></script>
+    <script>
+      var slider2 = tns({
+        container: ".expertise__slider",
+        items: 1,
+        slideBy: "page",
+        autoplay: true,
+        controlsText: [
+          "<i class='fas fa-chevron-left'></i>",
+          "<i class='fas fa-chevron-right'></i>",
+        ],
+        nav: false,
+        autoplay: false,
+        mouseDrag: true,
+        nav: true,
+      });
+    </script>
+  </body>
 </html>
