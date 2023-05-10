@@ -25,9 +25,11 @@
           </a>
           <div class="header__nav">
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a class="highlight" href="#">Projects</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li>
+                <a class="highlight" href="./about.html#expertise">Projects</a>
+              </li>
+              <li><a href="./contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="toggle__menu">
@@ -76,52 +78,95 @@
       </div>
     </section>
 
-    <section class="expertise">
+    <section class="expertise" id="expertise">
       <div class="container">
         <div class="expertise__wrapper">
           <span class="section__span">What am I good at?</span>
           <h3 class="section__title">Expertise</h3>
           <h4>My Projects</h4>
-          <div class="expertise__slider">
-            <div class="expertise__slide">
-              <img src="./img/foodorder.png" alt="" />
-              <div class="expertise__text">
-                <h5>Title</h5>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam corporis, corrupti suscipit necessitatibus provident
-                  repellendus distinctio est quo dolore soluta?
-                </p>
-                <div class="expertise__cta">
-                  <a href="" class="btn bg--accent"
-                    ><i class="fab fa-github"></i><span>Github</span></a
-                  >
-                  <a href="" class="btn bg--o-accent"
-                    ><i class="fas fa-desktop"></i><span>Live Demo</span></a
-                  >
+          <div class="expertise__outer">
+            <div class="expertise__slider">
+              <div class="expertise__slide">
+                <img src="./img/foodorder.png" alt="" />
+                <div class="expertise__text">
+                  <h5>Title</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aperiam corporis, corrupti suscipit necessitatibus provident
+                    repellendus distinctio est quo dolore soluta?
+                  </p>
+                  <div class="expertise__cta">
+                    <a href="" class="btn bg--accent"
+                      ><i class="fab fa-github"></i><span>Github</span></a
+                    >
+                    <a href="" class="btn bg--o-accent"
+                      ><i class="fas fa-desktop"></i><span>Live Demo</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="expertise__slide">
+                <img src="./img/forkifyapplication.png" alt="" />
+                <div class="expertise__text">
+                  <h5>Title</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aperiam corporis, corrupti suscipit necessitatibus provident
+                    repellendus distinctio est quo dolore soluta?
+                  </p>
+                  <div class="expertise__cta">
+                    <a href="" class="btn bg--accent"
+                      ><i class="fab fa-github"></i><span>Github</span></a
+                    >
+                    <a href="" class="btn bg--o-accent"
+                      ><i class="fas fa-desktop"></i><span>Live Demo</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="expertise__slide">
+                <img src="./img/forkifyapplication.png" alt="" />
+                <div class="expertise__text">
+                  <h5>Title</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aperiam corporis, corrupti suscipit necessitatibus provident
+                    repellendus distinctio est quo dolore soluta?
+                  </p>
+                  <div class="expertise__cta">
+                    <a href="" class="btn bg--accent"
+                      ><i class="fab fa-github"></i><span>Github</span></a
+                    >
+                    <a href="" class="btn bg--o-accent"
+                      ><i class="fas fa-desktop"></i><span>Live Demo</span></a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="expertise__slide">
-              <img src="./img/forkifyapplication.png" alt="" />
-              <div class="expertise__text">
-                <h5>Title</h5>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam corporis, corrupti suscipit necessitatibus provident
-                  repellendus distinctio est quo dolore soluta?
-                </p>
-                <div class="expertise__cta">
-                  <a href="" class="btn bg--accent"
-                    ><i class="fab fa-github"></i><span>Github</span></a
-                  >
-                  <a href="" class="btn bg--o-accent"
-                    ><i class="fas fa-desktop"></i><span>Live Demo</span></a
-                  >
-                </div>
-              </div>
+            <div class="expertise__controls">
+              <button data-action="prev">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button data-action="next">
+                <i class="fas fa-chevron-right"></i>
+              </button>
             </div>
+            <div class="expertise__nav"></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <div class="contact__wrapper">
+          <h3 class="section__title">Feel free to talk about your Projects</h3>
+          <p>
+            Contact me if you’re interested talking/collaborating with your
+            projects.
+          </p>
+          <a href="" class="btn bg--primary">Contact Me</a>
         </div>
       </div>
     </section>
@@ -154,20 +199,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="./index.js"></script>
     <script>
+      const expertiseNav = document.querySelector(".expertise__nav");
+      const expertiseSlide = document.querySelectorAll(".expertise__slide");
+
+      expertiseSlide.forEach(() => {
+        expertiseNav.insertAdjacentHTML("afterbegin", "<span></span>");
+      });
+
       var slider2 = tns({
         container: ".expertise__slider",
         items: 1,
         slideBy: "page",
         autoplay: true,
-        controlsText: [
-          "<i class='fas fa-chevron-left'></i>",
-          "<i class='fas fa-chevron-right'></i>",
-        ],
-        nav: false,
-        autoplay: false,
-        mouseDrag: true,
+        controlsContainer: ".expertise__controls",
         nav: true,
+        navPosition: "bottom",
+        navAsThumbnails: true,
+        navContainer: ".expertise__nav",
+        autoplay: true,
+        autoplayButton: false,
+        mouseDrag: true,
       });
+      console.log(expertiseSlide);
+      console.log(expertiseNav);
     </script>
   </body>
 </html>

@@ -49,6 +49,7 @@ textarea {
 html {
   font-size: 62.5%;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -958,6 +959,14 @@ section.contact .section__title::after {
   justify-items: end;
   gap: 2rem;
 }
+@media screen and (max-width: 50rem) {
+  .aboutMe__wrapper {
+    grid-template-columns: 1fr;
+  }
+  .aboutMe__wrapper img {
+    order: -1;
+  }
+}
 .aboutMe__text {
   overflow: hidden;
 }
@@ -966,6 +975,13 @@ section.contact .section__title::after {
 }
 .aboutMe__text p {
   padding: 1rem 2rem;
+  text-align: justify;
+}
+@media screen and (max-width: 50rem) {
+  .aboutMe__text p {
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+  }
 }
 .aboutMe__socials {
   margin-top: 2rem;
@@ -992,6 +1008,11 @@ section.contact .section__title::after {
   background-color: #07393c;
   padding: 4rem 0;
 }
+@media screen and (max-width: 50rem) {
+  .expertise {
+    padding: 2rem 0;
+  }
+}
 .expertise__wrapper {
   text-align: center;
   color: #f0edee;
@@ -1000,17 +1021,15 @@ section.contact .section__title::after {
   font-size: 2.1rem;
   padding-top: 2rem;
 }
-.expertise__slider {
-  padding: 2rem 0;
-  transition: 0.5s ease-in-out;
-}
 .expertise__slide {
   position: relative;
+  z-index: 4;
+  transition: 0.5s ease-in-out;
 }
 .expertise__slide img {
   position: relative;
 }
-.expertise__slider:hover .expertise__slide::after {
+.expertise__outer:hover .expertise__slide::after {
   content: "";
   position: absolute;
   top: 0;
@@ -1036,8 +1055,14 @@ section.contact .section__title::after {
 .expertise__cta a.btn.bg--o-accent:hover span {
   color: #0a090c;
 }
+@media screen and (max-width: 50rem) {
+  .expertise__cta {
+    padding: 0.5rem 0;
+  }
+}
 .expertise__text {
   opacity: 0;
+  transition: 0.5s ease-in-out;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -1046,9 +1071,9 @@ section.contact .section__title::after {
   width: 100%;
   height: 100%;
   top: 0;
-  z-index: 9;
+  z-index: 5;
 }
-.expertise__slider:hover .expertise__text {
+.expertise__outer:hover .expertise__text {
   opacity: 1;
 }
 .expertise__text h5 {
@@ -1059,36 +1084,112 @@ section.contact .section__title::after {
   width: 50%;
   margin: 0 auto;
 }
+@media screen and (max-width: 50rem) {
+  .expertise__text h5 {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+  }
+  .expertise__text p {
+    font-size: 1.4rem;
+    width: 80%;
+  }
+  .expertise__text a {
+    font-size: 1.4rem;
+  }
+}
 .expertise .section__span {
   color: #f0edee;
 }
 .expertise .section__title {
   color: #f0edee;
 }
-.expertise .tns-outer {
-  padding: 4rem 0 !important;
+.expertise__outer {
   position: relative;
+  margin: 4rem 0;
+}
+.expertise__controls {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+  visibility: hidden;
+}
+.expertise__controls button {
+  padding: 100% 4rem;
+  z-index: 5;
+  visibility: visible;
+  cursor: pointer;
+}
+.expertise__controls button i {
+  font-size: 4rem;
+}
+@media screen and (max-width: 50rem) {
+  .expertise__controls button {
+    padding: 100% 1rem;
+  }
+}
+.expertise__controls button:hover {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0.1) 100%);
+}
+.expertise__nav {
+  background-color: rgba(10, 9, 12, 0.5);
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  height: 5rem;
+  transition: 0.5s ease-in-out;
+}
+.expertise__nav span {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #f0edee;
+  cursor: pointer;
+}
+.expertise__nav span.tns-nav-active {
+  background-color: #07393c;
+}
+@media screen and (max-width: 50rem) {
+  .expertise__nav {
+    height: 2.5rem;
+  }
+  .expertise__nav span {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+.expertise .tns-outer {
+  position: relative;
+}
+.expertise .tns-outer button[data-action=start],
+.expertise .tns-outer button[data-action=stop] {
+  display: none;
 }
 .expertise .tns-controls {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 96%;
+  width: 100%;
   height: 70rem;
-  left: 2rem;
+  left: 0;
+  top: 2rem;
 }
 .expertise .tns-controls button {
   font-size: 4rem;
   z-index: 9;
-}
-.expertise .tns-controls button i:hover {
-  background: radial-gradient(circle at 50% 50%, rgb(0, 0, 0) 0%, rgb(255, 255, 255) 100%, rgb(217, 111, 111) 100%);
-  padding: 2rem;
-  border-radius: 50%;
   width: 10rem;
-  height: 10rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+.expertise .tns-controls button:hover {
+  height: 89%;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0.1) 100%);
 }/*# sourceMappingURL=main.css.map */
